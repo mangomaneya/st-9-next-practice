@@ -1,12 +1,15 @@
-import { Todos } from "@/types/data";
-import Image from "next/image";
-import React from "react";
+"use client";
 
+import type { Todos } from "@/types/data";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import React from "react";
 type Props = {
   todo: Todos;
 };
 
 const TodoItem = ({ todo }: Props) => {
+  const router = useRouter();
   return (
     <li
       key={todo.id}
@@ -24,7 +27,7 @@ const TodoItem = ({ todo }: Props) => {
         height={50}
       />
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <button onClick={() => navigate(`/todolist/${todo.id}`)}>
+        <button onClick={() => router(`/todolist/${todo.id}`)}>
           내용보기
         </button>
       </div>

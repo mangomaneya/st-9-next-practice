@@ -8,3 +8,7 @@ export const getTodos = async () => {
   const data: Todos[] = await response.json();
   return data;
 };
+
+export const getDetail = ()=>{
+
+}
